@@ -23,7 +23,7 @@ module tb ();
   wire [7:0] uio_oe;
 
   // Replace tt_um_example with your module name:
-  tt06_mithro_lut4_test user_project (
+  tt_um_mithro_lut4_test user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
