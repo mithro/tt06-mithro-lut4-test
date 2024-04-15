@@ -17,18 +17,18 @@ module mux_prog (
   // sky130_fd_sc_hd__mux2
   // https://skywater-pdk.readthedocs.io/en/main/contents/libraries/sky130_fd_sc_hd/cells/mux2/README.html
   sky130_fd_sc_hd__mux2_1 mux2(
-      .a0(a),
-      .a1(b),
-      .x(o),
-      .s(config_out)
+      .A0(a),
+      .A1(b),
+      .X(o),
+      .S(config_out)
   );
 
   // sky130_fd_sc_hd__dfxtp
   // https://skywater-pdk.readthedocs.io/en/main/contents/libraries/sky130_fd_sc_hd/cells/dfxtp/README.html
   sky130_fd_sc_hd__dfxtp_1 config_data(
-      .d(config_in_),
-      .q(config_out),
-      .clk(config_clk)
+      .D(config_in_),
+      .Q(config_out),
+      .CLK(config_clk)
   );
 
 endmodule
