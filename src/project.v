@@ -45,8 +45,8 @@ module tt06_mithro_lut4_test (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  wire config_clk;
-  wire config_dat_in;
+  wire config_dat_clk;
+  wire config_dat_in_;
   wire config_dat_out;
 
   // First row of muxes -- 8 inputs, 4 outputs
@@ -56,8 +56,8 @@ module tt06_mithro_lut4_test (
     a(ui_in[0]),
     b(ui_in[1]),
     o(mux_a1_out),
-    config_clk(config_clk),
-    config_in_(config_dat_in),
+    config_clk(config_dat_clk),
+    config_in_(config_dat_in_),
     config_out(mux_a1_config_out)
   );
 
@@ -67,7 +67,7 @@ module tt06_mithro_lut4_test (
     a(ui_in[2]),
     b(ui_in[3]),
     o(mux_a2_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_a1_config_out),
     config_out(mux_a2_config_out)
   );
@@ -78,7 +78,7 @@ module tt06_mithro_lut4_test (
     a(ui_in[4]),
     b(ui_in[5]),
     o(mux_a3_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_a2_config_out),
     config_out(mux_a3_config_out)
   );
@@ -89,7 +89,7 @@ module tt06_mithro_lut4_test (
     a(ui_in[6]),
     b(ui_in[7]),
     o(mux_a4_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_a3_config_out),
     config_out(mux_a4_config_out)
   );
@@ -101,7 +101,7 @@ module tt06_mithro_lut4_test (
     a(mux_a1_out),
     b(mux_a2_out),
     o(mux_b1_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_a4_config_out),
     config_out(mux_b1_config_out)
   );
@@ -112,7 +112,7 @@ module tt06_mithro_lut4_test (
     a(mux_a3_out),
     b(mux_a4_out),
     o(mux_b2_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_b1_config_out),
     config_out(mux_b2_config_out)
   );
@@ -124,7 +124,7 @@ module tt06_mithro_lut4_test (
     a(mux_b1_out),
     b(mux_b2_out),
     o(mux_c1_out),
-    config_clk(config_clk),
+    config_clk(config_dat_clk),
     config_in_(mux_b2_config_out),
     config_out(mux_c1_config_out)
   );
@@ -142,8 +142,8 @@ module tt06_mithro_lut4_test (
   assign uo_out[7] = config_dat_out;
 
   // Configuration stuff
-  assign config_clk     = uio_in[0];
-  assign config_dat_in  = uio_in[1];
+  assign config_dat_clk = uio_in[0];
+  assign config_dat_in_ = uio_in[1];
   assign config_dat_out = mux_c1_config_out;
 
   assign uio_oe  = 0; // Always inputs
