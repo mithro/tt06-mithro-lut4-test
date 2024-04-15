@@ -5,7 +5,6 @@
 
 `define default_netname none
 
-
 module mux_prog (
     input wire a,
     input wire b,
@@ -24,9 +23,9 @@ module mux_prog (
       .s(config_out)
   );
 
-  // sky130_fd_sc_hs__dfxtp
-  // https://skywater-pdk.readthedocs.io/en/main/contents/libraries/sky130_fd_sc_hs/cells/dfxtp/README.html
-  sky130_fd_sc_hs__dfxtp config_data(
+  // sky130_fd_sc_hd__dfxtp
+  // https://skywater-pdk.readthedocs.io/en/main/contents/libraries/sky130_fd_sc_hd/cells/dfxtp/README.html
+  sky130_fd_sc_hd__dfxtp config_data(
       .d(config_in_),
       .q(config_out),
       .clk(config_clk)
