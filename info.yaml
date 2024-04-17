@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "Programmable MUX"      # Project title
+  title:        "Programmable Objects"      # Project title
   author:       "Tim 'mithro' Ansell"      # Your name
   discord:      "mithro"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Multiplexer with select lines configured by a scan chain"      # One line description of what your project does
+  description:  "Small primitives which can be reprogrammed after manufacturing."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -11,11 +11,12 @@ project:
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_mithro_lut4_test"
+  top_module:  "tt_um_mithro_progobj_test"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:
     - "project.v"
+      #    - "progmux.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:

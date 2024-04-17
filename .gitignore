@@ -3,6 +3,8 @@
 .vscode
 *.vcd
 runs
+tt
+ttsetup
 tt_submission
 src/user_config.tcl
 test/sim_build
